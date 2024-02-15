@@ -1,0 +1,59 @@
+/* https://codepen.io/wheately/pen/bzNoJQ */
+* {
+  box-sizing: border-box;
+}
+:root {
+  --color: white;
+
+  --primary: #ff1ead;
+  --secondary: #1effc3;
+
+  --card-size: 300px;
+}
+body {
+  height: 100dvh;
+  font-family: 'Source Code Pro', monospace;
+  background-color: white;
+  color: var(--color);
+
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  width: 450px;
+  height: var(--card-size);
+  background-color: black;
+  display: flex;
+  border-radius: 30px;
+  box-shadow: 0 20px 70px 5px rgba(0, 0, 0, 0.5);
+}
+.image {
+  width: 100%;
+}
+svg {
+  fill: white;
+  width: 65%;
+}
+.information {
+  margin-top: 50px;
+}
+#name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.label {
+  color: var(--primary);
+}
+.details .label {
+  font-size: 0.75rem;
+}
+
+.details {
+  display: flex;
+}
+
+.details div {
+  flex-grow: 1;
+}

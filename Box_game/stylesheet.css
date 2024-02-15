@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+}
+
+.information {
+  width: 300px;
+}
+.box-big {
+  background-color: black;
+  height: 600px;
+  width: 600px;
+}
+.cube {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(50, 227, 250);
+  position: relative;
+  /* top: 20px;
+  left: 50px; */
+}
+
+.timer {
+  font-size: 30px;
+}

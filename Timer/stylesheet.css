@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --grayColor: rgb(163, 163, 163);
+  --activeColor: rgb(124, 181, 247);
+}
+.container {
+  width: 500px;
+  /* height: 200px; */
+  background-color: black;
+  border: 1px solid var(--grayColor);
+  border-radius: 10px;
+  color: aliceblue;
+}
+
+.topButtons {
+  display: flex;
+}
+.topButtons button {
+  height: 50px;
+  border: none;
+  border-color: var(--grayColor);
+  border-bottom: 2px solid;
+  background: none;
+  color: var(--grayColor);
+  font-weight: 600;
+  display: block;
+  flex-grow: 1;
+}
+
+button.active {
+  color: var(--activeColor);
+  border-color: var(--activeColor);
+}
+.timer-display,
+.stopwatch-display {
+  padding: 30px 10px;
+  font-size: 25px;
+  line-height: 50px;
+  display: flex;
+  align-items: end;
+  gap: 7px;
+}
+
+.timer-display span,
+.stopwatch-display span {
+  font-size: 50px;
+}
+
+.controlButtons {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--grayColor);
+  padding: 14px 20px;
+  gap: 20px;
+}
+
+.controlButtons button {
+  border: none;
+  height: 22px;
+  width: 60px;
+  font-size: 10px;
+}
+.current {
+  background-color: var(--activeColor);
+}
+.hidden {
+  display: none;
+}
