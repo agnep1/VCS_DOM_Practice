@@ -8,10 +8,9 @@ const luckyNumber = rand(0, 100)
 const rolledNumbers = []
 
 function rollBall () {
-  let value = 'bum'
+  let value = ''
   do {
     value = rand(0, 100)
-    console.log(value)
   } while (rolledNumbers.includes(value))
   rolledNumbers.push(value)
 
