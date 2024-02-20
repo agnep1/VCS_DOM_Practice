@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  /* border: 5px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 70px;
+
+  min-width: 400px;
+  width: 800px;
+}
+.proposals {
+  /* border: 5px solid green; */
+  color: gray;
+  font-weight: 600;
+}
+.hidden {
+  display: none;
+}
+p {
+  margin: 0;
+  padding: 0 15px;
+  line-height: 2em;
+  background-color: aliceblue;
+}
+p:hover {
+  background: rgb(218, 238, 255);
+}
+
+.search-box {
+  border: 5px solid gray;
+  border-radius: 2em;
+  position: relative;
+  display: flex;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0 20px;
+  font-size: 30px;
+  width: 100%;
+}
+
+i {
+  font-size: 25px;
+  color: red;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
