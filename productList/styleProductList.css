@@ -34,9 +34,16 @@
 .product-name {
   color: rgb(66, 179, 255);
   font-weight: 500;
+  margin-top: 5px;
 }
-.star-rating {
-  font-size: 20px;
+.star-rating span {
+  font-size: 25px;
+  background: gold;
+  background-clip: text;
+  color: transparent;
+}
+/* document.documentElement.style.setProperty('--rating', fractionalPart * 100 + '%') */
+.star-rating > .partial {
   background: linear-gradient(
     90deg,
     gold 0%,
@@ -44,9 +51,28 @@
     rgba(255, 215, 0, 0) var(--rating),
     rgba(255, 215, 0, 0) 100%
   );
-
   background-clip: text;
   color: transparent;
-  border: 1px solid black;
 }
-/* document.documentElement.style.setProperty('--rating', fractionalPart * 100 + '%') */
+
+.description {
+  margin-top: 20px;
+}
+
+.price {
+  display: flex;
+  gap: 2px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.btn-add-to-cart {
+  width: 150px;
+  height: 30px;
+  background-color: orange;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}

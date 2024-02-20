@@ -113,12 +113,12 @@ const data = [
 
 const input = document.querySelector('input');
 const proposalList = document.querySelector('.proposals');
-
+const searchIcon = document.querySelector('.search-box i');
 input.addEventListener('input', fileterSugesstions);
 input.addEventListener('focus', hidePlaceholder);
 input.addEventListener('blur', showPlaceholder);
 proposalList.addEventListener('click', choseProposal);
-document.querySelector('.search-box i')?.addEventListener('click', () => {
+searchIcon?.addEventListener('click', () => {
   input.focus();
 });
 
