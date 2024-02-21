@@ -51,7 +51,15 @@ button.active {
 .controlButtons {
   display: flex;
   align-items: center;
+  --timePassed: 0%;
   border-top: 1px solid var(--grayColor);
+  background: linear-gradient(
+    90deg,
+    var(--activeColor) 0%,
+    var(--activeColor) var(--timePassed),
+    var(--grayColor) var(--timePassed),
+    var(--grayColor) 100%
+  );
   padding: 14px 20px;
   gap: 20px;
 }

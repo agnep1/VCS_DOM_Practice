@@ -72,6 +72,9 @@
   background-color: orange;
   border: none;
 }
+.btn-add-to-cart:active {
+  background-color: rgb(255, 217, 0);
+}
 
 .hidden {
   display: none;

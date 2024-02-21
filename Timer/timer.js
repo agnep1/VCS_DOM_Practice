@@ -3,7 +3,11 @@ let countMinutesTimer = 10;
 let countSecondsTimer = 0;
 const minutes = document.querySelector('.minutes');
 const seconds = document.querySelector('.seconds');
+const timeScale = document.querySelector('.controlButtons');
 
+let timepercentagePerSecPassed = 0;
+let timepercentagePerSec = 100 / (countMinutesTimer * 60 + countSecondsTimer);
+console.log(typeof timepercentagePerSec);
 function timerCounting() {
   countingTimer = setInterval(() => {
     countSecondsTimer--;
@@ -17,6 +21,13 @@ function timerCounting() {
     if (countMinutesTimer === 0 && countSecondsTimer === 0) {
       stopTimerCounting();
     }
+    timepercentagePerSecPassed =
+      timepercentagePerSecPassed + timepercentagePerSec;
+    console.log(timepercentagePerSec);
+    timeScale.style.setProperty(
+      '--timePassed',
+      `${timepercentagePerSecPassed}%`
+    );
   }, 1000);
   start.removeEventListener('click', timerCounting);
   start.classList.add('hidden');
@@ -36,6 +47,7 @@ function timerReseting() {
   start.addEventListener('click', timerCounting);
   start.classList.remove('hidden');
   pausing.classList.add('hidden');
+  timeScale.style.setProperty('--timePassed', `0%`);
 }
 function timerPause() {
   stopTimerCounting();
@@ -124,3 +136,5 @@ stopwatchFunctionButton.addEventListener('click', () => {
   timerFunctionButton.classList.remove('active');
   stopwatchFunctionButton.classList.add('active');
 });
+
+// .controlButtons --timePassed: 12%;

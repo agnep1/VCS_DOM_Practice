@@ -20,18 +20,18 @@ function filterPhrases(e) {
     .slice(0, 5);
 
   const html = filteredPhrases
-    .map((value) => `<li onclick="chooseSuggestion()">${value}</li>`)
+    .map((value) => `<li onclick="chooseSuggestion(event)">${value}</li>`)
     .join('');
 
   document.querySelector('.autocomplete').innerHTML = html;
 
   // document.querySelectorAll('li').forEach(el => {
   //     el.addEventListener('click',
-  function chooseSuggestion(e) {
-    // console.log(e.target.textContent);
-    // Naujos reikšmės laukelyje priskyrimas
-    document.querySelector('input').value = e.target.textContent;
-    // Pasiūlymų išvalymas
-    document.querySelector('.autocomplete').innerHTML = '';
-  }
+}
+function chooseSuggestion(e) {
+  // console.log(e.target.textContent);
+  // Naujos reikšmės laukelyje priskyrimas
+  document.querySelector('input').value = e.target.textContent;
+  // Pasiūlymų išvalymas
+  document.querySelector('.autocomplete').innerHTML = '';
 }
