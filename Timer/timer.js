@@ -39,9 +39,9 @@ function stopTimerCounting() {
 }
 
 function timerReseting() {
+  stopTimerCounting();
   countMinutesTimer = 10;
   countSecondsTimer = 0;
-  stopTimerCounting();
   minutes.textContent = countMinutesTimer;
   seconds.textContent = '00';
   start.addEventListener('click', timerCounting);
