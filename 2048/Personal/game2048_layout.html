@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+      :root {
+        --gap: 15px;
+        --element-widht: 100px;
+      }
       * {
         box-sizing: border-box;
+        --movingDistance: calc((var(--element-widht) + var(--gap)) * -1);
       }
       body {
         font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -14,8 +19,8 @@
       .container {
         display: flex;
         empty-cells: show;
-        width: 480px;
-        height: 480px;
+        width: 475px;
+        height: 475px;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-content: space-evenly;
@@ -91,6 +96,28 @@
         background-color: #dfb52a;
         color: #f9f6f2;
         font-size: 40px;
+        line-height: calc();
+      }
+
+      @keyframes appearing {
+        0% {
+          scale: 0.5;
+        }
+        50% {
+          scale: 1.5;
+        }
+        100% {
+          scale: 1;
+        }
+      }
+
+      @keyframes boxMove {
+        from {
+          transform: translateY(0%);
+        }
+        to {
+          transform: translateX(var(--movingDistance));
+        }
       }
 
       /* .container2 {

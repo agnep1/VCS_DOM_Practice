@@ -5,8 +5,8 @@ function rand(min, max) {
 }
 
 let board = [
-  [0, 2, 0, 0],
-  [0, 0, 2, 0],
+  [0, 2, 4, 0],
+  [0, 0, 2, 8],
   [0, 0, 0, 0],
   [0, 0, 0, 0],
 ];
@@ -70,7 +70,11 @@ function slideLeft() {
     newBoard.push(newRow);
   }
   board = newBoard;
-  console.log(board);
+  // console.log(board);
+  document
+    .getElementById(`0-3`)
+    .style.setProperty('animation', 'boxMove 500ms');
+
   loadBoord(board);
 }
 
@@ -133,7 +137,13 @@ function aditionalNumber() {
     if (board[row][cloumn] === 0) {
       cell = true;
       board[row][cloumn] = Math.random() > 0.9 ? 4 : 2;
-      loadBoord(board);
+      // loadBoord(board);
+      const newBox = document.getElementById(`${row}-${cloumn}`);
+      newBox.style.setProperty('animation', 'appearing 1000ms');
     }
   }
+
+  // document
+  //   .getElementById(`0-3`)
+  //   .style.setProperty('animation', 'boxMove 500ms');
 }
