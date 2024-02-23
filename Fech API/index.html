@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetching animals :D</title>
+  </head>
+  <body>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      img {
+        max-width: 300px;
+        max-height: 200px;
+      }
+      .image {
+        height: 200px;
+        width: 320px;
+      }
+    </style>
+    <main>
+      <div class="container">
+        <div>
+          <h1>Dogs</h1>
+          <div class="image dog"></div>
+          <button onclick="lookForDog()">Bring a dog</button>
+        </div>
+        <div>
+          <h1>Fox</h1>
+          <div class="image fox"></div>
+          <button onclick="lookForFox()">Bring a dog</button>
+        </div>
+        <div>
+          <h1>Cat</h1>
+          <div class="image cat"></div>
+          <button onclick="lookForCat(200)">200</button>
+          <button onclick="lookForCat(203)">203</button>
+          <button onclick="lookForCat(304)">304</button>
+        </div>
+        <div>
+          <h1>Bitcoin price</h1>
+          <div class="bitcoin"></div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function lookForDog() {
+        fetch('https://dog.ceo/api/breeds/image/random')
+          .then((response) => response.json())
+          .then(
+            (response) =>
+              (document.querySelector(
+                '.dog'
+              ).innerHTML = `<img src="${response.message}" alt="" />`)
+          );
+      }
+      function lookForFox() {
+        fetch('https://randomfox.ca/floof')
+          .then((response) => response.json())
+          .then(
+            (response) =>
+              (document.querySelector(
+                '.fox'
+              ).innerHTML = `<img src="${response.image}" alt="" />`)
+          );
+      }
+      lookForFox();
+      function lookForCat(statusCode) {
+        // const statusCode = e.target.textContent;
+        document.querySelector(
+          '.cat'
+        ).innerHTML = `<img src="https://http.cat/${statusCode}.jpg" alt="" />`;
+      }
+
+      fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+        .then((res) => res.json())
+        .then((res) => {
+          const bit = res.bpi;
+          document.querySelector(
+            '.bitcoin'
+          ).innerHTML = ` <div class="EUR">${bit.EUR.rate} ${bit.EUR.symbol}</div>
+          <div class="USD">${bit.USD.rate} ${bit.USD.symbol} </div>
+          <div class="GBP">${bit.GBP.rate} ${bit.GBP.symbol}</div>`;
+        });
+    </script>
+  </body>
+</html>

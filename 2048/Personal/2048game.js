@@ -60,7 +60,7 @@ document.addEventListener('keyup', (e) => {
   if (e.code === 'ArrowDown') {
     slideDown();
   }
-  aditionalNumber();
+  setTimeout(aditionalNumber, 1000);
 });
 
 function slideLeft() {
@@ -72,10 +72,18 @@ function slideLeft() {
   board = newBoard;
   // console.log(board);
   document
-    .getElementById(`0-3`)
+    .getElementById(`0-1`)
     .style.setProperty('animation', 'boxMove 500ms');
-
-  loadBoord(board);
+  document
+    .getElementById(`0-2`)
+    .style.setProperty('animation', 'boxMove 500ms');
+  document
+    .getElementById(`1-2`)
+    .style.setProperty('animation', 'boxMove 500ms');
+  document
+    .getElementById(`1-3`)
+    .style.setProperty('animation', 'boxMove 500ms');
+  // setTimeout(loadBoord, 1000, board);
 }
 
 function slideRight() {
@@ -137,7 +145,7 @@ function aditionalNumber() {
     if (board[row][cloumn] === 0) {
       cell = true;
       board[row][cloumn] = Math.random() > 0.9 ? 4 : 2;
-      // loadBoord(board);
+      loadBoord(board);
       const newBox = document.getElementById(`${row}-${cloumn}`);
       newBox.style.setProperty('animation', 'appearing 1000ms');
     }
